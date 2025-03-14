@@ -3,7 +3,7 @@
 **A beautifully designed ice cream ordering website built with PHP, CSS, and XAMPP.**  
 
 <p align="center">
-  <img src="images/loader5.gif" alt="OmniFile AI" width="300"> 
+  <img src="images/frontendss.png" alt="frontend" width="500"> 
 </p>   
 *(Replace the above URL with a screenshot of your project.)*
 
@@ -22,8 +22,6 @@
 - **Frontend:** HTML, CSS, JavaScript  
 - **Backend:** PHP  
 - **Database:** MySQL (XAMPP)  
-
----
 
 ---
 
@@ -59,17 +57,18 @@ $dbname = "flize_db";
 
 ---
 
-## **📸 Screenshots**
-| Homepage | Admin Panel |
-|----------|------------|
-| ![Homepage](https://via.placeholder.com/500) | ![Admin Panel](https://via.placeholder.com/500) |
+## 📸 Screenshots
 
-*(Replace the placeholder images with actual screenshots.)*
+### 🖥️ Frontend View
+![Frontend Screenshot](images/frontendss.png)
 
+### 🔧 Backend View
+![Backend Screenshot](images/backendss.png)                    
+  
 ---
 
 ## **🔗 Live Demo**  
-🚀 *Coming soon...* *(If deployed, add the URL here.)*  
+🚀 *Coming soon...* 
 
 ---
 
