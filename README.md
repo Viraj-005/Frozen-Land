@@ -2,7 +2,9 @@
    **📌 Frozen Land - Ice Cream Website 🍦**  
 **A beautifully designed ice cream ordering website built with PHP, CSS, and XAMPP.**  
 
-![Frozen Land Preview](https://via.placeholder.com/1000x500?text=Frozen+Land+Website)  
+<p align="center">
+  <img src="images/loader5.gif" alt="OmniFile AI" width="300"> 
+</p>   
 *(Replace the above URL with a screenshot of your project.)*
 
 ---
