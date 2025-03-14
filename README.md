@@ -3,7 +3,7 @@
 **A beautifully designed ice cream ordering website built with PHP, CSS, and XAMPP.**  
 
 <p align="center">
-  <img src="images/loader5.gif" alt="frontend" width="500"> 
+  <img src="images/loader5.gif" alt="frontend" width="400"> 
 </p>
 
 ---
