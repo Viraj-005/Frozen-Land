@@ -1,0 +1,1138 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+    --main-color: #FB2576;
+    --primary-color: #666;
+    --bg-color: #f5f5f5;
+    --white: #fff;
+    --black: #000000;
+    --round-color: #d7d7d7 ;
+    --hover: #FEA1A1;
+    --border:.1rem solid black;
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+    /* Color mode HSL(hue, saturation, lightness) for Battery */
+     --gradient-color-red: linear-gradient(90deg, 
+    hsl(7, 89%, 46%) 15%,
+    hsl(11, 93%, 68%) 100%);
+    --gradient-color-orange: linear-gradient(90deg, 
+    hsl(22, 89%, 46%) 15%,
+    hsl(54, 90%, 45%) 100%);
+    --gradient-color-yellow: linear-gradient(90deg, 
+    hsl(54, 89%, 46%) 15%,
+    hsl(92, 90%, 45%) 100%);
+    --gradient-color-green: linear-gradient(90deg, 
+    hsl(92, 89%, 46%) 15%,
+    hsl(92, 90%, 68%) 100%);
+}
+
+*{
+    font-family: 'Dosis', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+::-webkit-scrollbar{
+    width: 1rem;
+    height: .5rem;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+html, body{
+    font-size: 62%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    background: var(--bg-color);
+    overscroll-behavior: none;
+    height: 100vh;
+}
+
+body.dark{
+    --primary-color: #f5f5f5;
+    --bg-color: #36454f;
+    --white: #262626;
+    --black: #fff;
+    --hover: #FEA1A1;
+    --border:.1rem solid rgba(255, 255, 255, 0.1);
+    --box-shadow:0 .5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+section{
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.btn{
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 2.5rem;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    background-color: var(--main-color);
+    cursor: pointer;
+    text-transform: capitalize;
+    border: var(--box-shadow);
+    text-align: center;
+}
+
+.btn:hover{
+    background-color: var(--black);
+}
+
+.message{
+    position: sticky;    
+    top:0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    justify-content: space-between;
+    gap:1.5rem;
+    z-index: 10000;
+}
+ 
+.message span{
+    font-size: 2rem;
+    color: var(--black);
+}
+ 
+.message i{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color:var(--main-color);
+}
+ 
+.message i:hover{
+    color: var(--black);
+}
+
+.empty{
+    padding: 1.5rem;
+    background-color: var(--bg-color);
+    color: var(--black);
+    border-radius: 2.5rem;
+    border: var(--box-shadow);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+}
+
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header .flex .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.header .flex .navbar a{
+    margin: 0 1rem;
+    border-radius: 2.5rem;
+    padding: .5rem 1rem;
+    font-size: 2.2rem;
+    color: var(--black);
+}
+
+.header .flex .navbar a:hover{
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+.header .flex .icons div{
+    font-size: 2.3rem;
+    color: var(--black);
+    cursor: pointer;
+    margin-left: 1.7rem;
+}
+
+.header .flex .icons div:hover{
+    color: var(--main-color);
+}
+
+.header .flex .logo span{
+    color: var(--main-color);
+}
+
+.header .flex .icons div span{
+    font-size: 2rem;
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: translateY(1rem);
+    }
+} 
+
+.header .flex .profile{
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: var(--white);
+    border-radius: 2.5rem;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    display: none;
+    animation: fadeIn .2s linear;
+    width: 30rem;
+    border: var(--box-shadow);
+}
+
+.header .flex .profile.active{
+    display: inline-block;
+}
+
+.header .flex .profile p{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.header .flex .theme-container{
+    position: absolute;
+    top: 120%; 
+    right: 2rem;
+    background-color: var(--white);
+    border: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    display: none;
+    border-radius: 2.5rem;
+    animation: fadeIn .2s linear;
+    width: 30rem;
+    padding: 2rem;
+}
+  
+.header .flex .theme-container.active{
+    display: inline-block;
+}
+
+.header .flex .theme-container h3{
+    text-align: center;
+    font-size: 2rem;
+    color: var(--black);
+    text-transform: capitalize;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    margin-bottom: 1rem;
+    padding: 15px 0;
+    margin: 20px 0;
+}
+  
+.header .flex .theme-container .theme-toggler{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.header .flex .theme-container .theme-toggler span{
+    color: var(--black);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+  
+.header .flex .theme-container .theme-toggler .toggler{
+    height: 40px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: #eee;
+    position: relative;
+    cursor: pointer;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    margin: 0 10px;
+}
+
+.header .flex .theme-container .theme-toggler .toggler::before{
+    content:'';
+    position: absolute;
+    top:5px; left:5px;
+    height:28px;
+    width:28px;
+    border-radius: 50%;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+    transition:.2s linear;
+}
+  
+.header .flex .theme-container .theme-toggler .toggler.active::before{
+    left:65px;
+    box-shadow: var(--box-shadow);
+}
+
+.header .flex .theme-container .theme-colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:15px;
+}
+  
+.header .flex .theme-container .theme-colors .color{
+    border-radius: 2.5rem;
+    height:50px;
+    width:50px;
+    cursor: pointer;
+}
+  
+.header .flex .theme-container .theme-colors .color:hover{
+    opacity: .5;
+}
+
+.header #progress{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 70px;
+    width: 70px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.header #progress-value{
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: var(--white);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    color: var(--black);
+}
+
+#menu-btn{
+    display: none;
+}
+
+.delete-btn,
+.option-btn,
+.btn{
+   display: block;
+   width: 100%;
+   margin-top: 1rem;
+   border-radius: 2.5rem;
+   padding:1rem 3rem;
+   font-size: 2rem;
+   color:var(--white);
+   cursor: pointer;
+   text-transform: capitalize;
+   text-align: center;
+   border: var(--box-shadow);
+}
+
+.btn{
+   background-color: var(--main-color);
+}
+
+.delete-btn{
+    background-color: red;
+}
+ 
+.option-btn{
+    background-color: orange;
+}
+
+.delete-btn:hover,
+.option-btn:hover,
+.btn:hover{
+   background-color: var(--black);
+   letter-spacing: 2px;
+}
+
+.flex-btn{
+    display: flex;
+    gap:1rem;
+}
+
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.form-container form{
+    position: relative;
+    text-align: center;
+    padding:2rem;
+    border-radius: 2.5rem;
+    --webkit-backdrop-filter: blur;
+    box-shadow: var(--box-shadow);
+    width: 50rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: #fff;
+}
+ 
+.form-container form h3{
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:var(--black);
+}
+ 
+.form-container form p{
+    border-radius: 2.5rem;
+    background-color: var(--bg-color);
+    padding:1.3rem;
+    font-size: 2rem;
+    color:var(--primary-color);
+    margin:1rem 0;
+}
+ 
+.form-container form p span{
+    color:var(--main-color);
+}
+ 
+.form-container form .box{
+    width: 100%;
+    border-radius: 2.5rem;
+    background-color: var(--bg-color);
+    padding:1.4rem;
+    margin:1rem 0;
+    font-size: 1.8rem;
+    color:var(--black);
+    border: none;
+}
+
+.form-container form .box::placeholder{
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+.bgimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dashboard .daybox-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+/*=============== Time of Day ===============*/
+.dashboard .daybox-container .box{
+    padding:2rem;
+    text-align: left;
+    border-radius: 2.5rem;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.dashboard .daybox-container .box img{
+    border-radius: 2.5rem;
+    width: 100%;
+}
+
+.dashboard .daybox-container .box h3{
+    font-size: 4rem;
+    color:var(--black);
+    margin-bottom: 2rem;
+}
+
+/*=============== Time & Date ===============*/
+
+.dashboard .daybox-container .box1{
+    padding: 2rem;
+    text-align: left;
+    border-radius: 2.5rem;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    margin-top: 3rem /* If you want you can remove this*/;
+}
+
+.dashboard .daybox-container .box1 h3{
+    font-size: 4rem;
+    color:var(--black);
+    margin-bottom: 2rem;
+}
+
+.dashboard .daybox-container .box1 h3 i{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 40%;
+    color:var(--main-color);
+    background-color: none;
+}
+
+.dashboard .daybox-container .box1 h3 span{
+    font-size: 2.5rem;
+    color:var(--black);
+    margin-bottom: 2rem;
+}
+
+/*=============== BATTERY ===============*/
+.battery{
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border: var(--box-shadow);
+    margin-left: 0; /* margin: 0 1.5rem; */
+    margin-right: 0;
+}
+.battery__card{
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background-color: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+    border: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+  
+.battery__text{
+    margin-bottom: .5rem;
+    color: var(--black);
+    font-size: 4rem;
+}
+  
+.battery__percentage{
+    font-size: 4rem;
+    color: var(--black);
+}
+  
+.battery__status{
+    position: absolute;
+    bottom: 1.5rem;
+    display: flex;
+    color: var(--black);
+    align-items: center;
+    column-gap: .5rem;
+    font-size: 4rem;
+}
+  
+.battery__status i{
+    font-size: 1.25rem;
+}
+
+.battery__pill{
+    position: relative;
+    width: 75px;
+    height: 180px;
+    background-color: var(--black);
+    box-shadow: inset 20px 0 48px hsl(0, 0%, 16%), 
+                inset -4px 12px 48px hsl(0, 0%, 56%);
+    border-radius: 2.5rem;
+    justify-self: flex-end;
+}
+  
+.battery__level{
+    position: absolute;
+    inset: 2px;
+    border-radius: 3rem;
+    overflow: hidden;
+}
+  
+.battery__liquid{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background: var(--gradient-color-red);
+    box-shadow: var(--box-shadow);
+    transition: .3s;
+}
+  
+.battery__liquid::after{
+    content: '';
+    position: absolute;
+    height: 8px;
+    background: var(--gradient-color-red);
+    box-shadow: var(--box-shadow);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -4px;
+    border-radius: 50%;
+}
+
+/* Full battery icon color */
+.green-color{
+    background: var(--gradient-color-green);
+}
+  
+/* Battery charging animation */
+.animated-green{
+    background: var(--gradient-color-green);
+    animation: animated-charging-battery 1.2s infinite alternate;
+}
+  
+/* Low battery animation */
+.animated-red{
+    background: var(--gradient-color-red);
+    animation: animated-low-battery 1.2s infinite alternate;
+}
+  
+.animated-green,
+.animated-red,
+.green-color{
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+  
+@keyframes animated-charging-battery{
+    0% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 0 0 6px hsl(92, 90%, 68%);
+    }
+}
+  
+@keyframes animated-low-battery{
+    0% {
+      text-shadow: none;
+    }
+    100% {
+      text-shadow: 0 0 8px hsl(7, 89%, 46%);
+    }
+}
+  
+/* Liquid battery with gradient color */
+.gradient-color-red,
+.gradient-color-red::after{
+    background: var(--gradient-color-red);
+}
+  
+.gradient-color-orange,
+.gradient-color-orange::after{
+    background: var(--gradient-color-orange);
+}
+  
+.gradient-color-yellow,
+.gradient-color-yellow::after{
+    background: var(--gradient-color-yellow);
+}
+  
+.gradient-color-green,
+.gradient-color-green::after{
+    background: var(--gradient-color-green);
+}
+
+/* Dashboard Summary */
+.dashboard .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    align-items: flex-start;
+    max-width: 1200px;
+    justify-content: center;
+}
+ 
+.dashboard .box-container .box{
+    padding:2rem;
+    text-align: center;
+    border-radius: 0rem 2.5rem 0rem 2.5rem;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+ 
+.dashboard .box-container .box p{
+    margin:1rem 0;
+    background-color: var(--bg-color);
+    border-radius: 2.5rem;
+    color:var(--primary-color);
+    font-size: 2rem;
+    padding:1.5rem;
+    border:var(--box-shadow);
+}
+ 
+.dashboard .box-container .box h3{
+    font-size: 4rem;
+    color:var(--black);
+}
+
+/* Add Products */
+.add-products form{
+    max-width: 50rem;
+    margin:0 auto;
+    background-color: var(--white);
+    border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border: var(--box-shadow);
+    padding-top: 1.5rem;
+}
+ 
+.add-products form .box{
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: var(--black);
+    border-radius: 2.5rem;
+    border: var(--box-shadow);
+    background-color: var(--bg-color);
+    margin: 1rem 0;
+}
+
+.add-products form .box::placeholder{
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+/* Show Products */
+.show-products .search-form form{
+    display: flex;
+    gap:1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.show-products .search-form form .box{
+    width: 100%;
+    border:var(--box-shadow);
+    border-radius: 2.5rem;
+    padding:1.4rem;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    color:var(--black);
+}
+
+.show-products form .box::placeholder{
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+.show-products .search-form form .fa-search{
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--main-color);
+    color:var(--white);
+    border: var(--box-shadow);
+    border-radius: 2.5rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+ 
+.show-products .search-form form .fa-search:hover{
+    background-color: var(--black);
+    color:var(--white);
+}
+
+.show-products .find-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+ 
+.show-products .find-container .box{
+    padding:2rem;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 2.5rem;
+    border: var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    margin-bottom: 2rem;
+}
+ 
+.show-products .find-container .box img{
+    width: 100%;
+    border-radius: 2.5rem;
+}
+
+.show-products .find-container .box .category{
+    font-size: 1.8rem;
+    color:var(--main-color);
+    text-transform: capitalize;
+}
+ 
+.show-products .find-container .box .price{
+    position: absolute;
+    top:1rem; left:1rem;
+    border-radius: 2.5rem;
+    background-color: var(--black);
+    color:var(--white);
+    padding:.5rem 1rem;
+    font-size: 2rem;
+}
+ 
+.show-products .find-container .box .price span{
+    font-size: 2.5rem;
+}
+ 
+.show-products .find-container .box .name{
+    margin:1rem 0;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.show-products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+ 
+.show-products .box-container .box{
+    padding:2rem;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 2.5rem;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+ 
+.show-products .box-container .box img{
+    width: 100%;
+    border-radius: 2.5rem;
+}
+
+.show-products .box-container .box .category{
+    font-size: 1.8rem;
+    color:var(--main-color);
+    text-transform: capitalize;
+}
+ 
+.show-products .box-container .box .price{
+    position: absolute;
+    top:1rem; left:1rem;
+    border-radius: 2.5rem;
+    background-color: var(--black);
+    color:var(--white);
+    padding:.5rem 1rem;
+    font-size: 2rem;
+}
+ 
+.show-products .box-container .box .price span{
+    font-size: 2.5rem;
+}
+ 
+.show-products .box-container .box .name{
+    margin:1rem 0;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+/* Update Products */
+.update-product form{
+    max-width: 50rem;
+    margin:0 auto;
+    background-color: var(--white);
+    border-radius: 2.5rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    border:var(--box-shadow);
+    padding-top: 1.5rem;
+}
+ 
+.update-product form .box{
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: 2.5rem;
+    border: var(--box-shadow);
+    background-color: var(--bg-color);
+    margin: 1rem 0;
+}
+ 
+.update-product form img{
+    width: 100%;
+    border-radius: 2.5rem;
+}
+
+/* Orders */
+.orders .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+ 
+.orders .box-container .box{
+    padding:2rem;
+    padding-top: 1rem;
+    border-radius: 2.5rem;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+ 
+.orders .box-container .box p{
+    line-height: 1.5;
+    font-size: 2rem;
+    color:var(--primary-color);
+    margin:1rem 0;
+    text-transform: capitalize;
+}
+ 
+.orders .box-container .box p span{
+    color:var(--main-color);
+}
+
+.orders .box-container .select{
+    margin-bottom: .5rem;
+    width: 100%;
+    background-color: var(--bg-color);
+    padding:1rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: 2.5rem;
+    border:var(--box-shadow);
+}
+
+/* Accounts */
+.accounts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+ 
+.accounts .box-container .box{
+    padding:2rem;
+    padding-top: 1rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+ 
+.accounts .box-container .box p{
+    font-size: 2rem;
+    color:var(--primary-color);
+    margin: .5rem 0;
+    /*text-transform: capitalize;*/
+}
+ 
+.accounts .box-container .box p span{
+    color:var(--main-color);
+}
+
+/* Messages */
+.messages .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+ 
+.messages .box-container .box{
+    padding:2rem;
+    padding-top: 1rem;
+    border-radius: 2.5rem;
+    text-align: center;
+    border:var(--box-shadow);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+ 
+.messages .box-container .box p{
+    font-size: 2rem;
+    color:var(--primary-color);
+    margin: .5rem 0;
+    /*text-transform: capitalize;*/
+}
+ 
+.messages .box-container .box p span{
+    color:var(--main-color);
+}
+
+/* Preloader */
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Background color behind the preloader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000; /* Ensure the preloader appears on top of other elements */
+}
+  
+.preloader img{
+    width: 500px; /* Adjust the width and height as needed */
+    height: 500px;
+}
+
+/* Media Queries */ 
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:875px){
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .flex .navbar{
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        border-bottom: var(--border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
+    .header .flex .navbar a{
+        display: block;
+        margin: 2rem;
+        border-radius: 2.5rem;
+        padding: .5rem 1rem;
+
+    }
+    
+    .dashboard .daybox-container .box1{
+        margin-top: 0;
+    }
+    
+    .battery__card {
+        zoom: .8;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .flex-btn{
+        flex-flow: column;
+        gap: 0;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .dashboard .daybox-container{
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard .daybox-container .box1{
+        margin-top: 0;
+    }
+
+    .dashboard .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .battery{
+        grid-template-columns: 1fr;
+    }
+
+    .battery__card {
+        zoom: .8;
+    }
+
+    .show-products .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .orders .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .accounts .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .messages .box-container{
+        grid-template-columns: 1fr;
+    }
+
+    .preloader img{
+        width: 300px; 
+        height: 300px;
+    }
+
+    .header #progress{
+        height: 55px;
+        width: 55px;
+    }
+    
+}

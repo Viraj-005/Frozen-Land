@@ -1,0 +1,33 @@
+# XAMPP specific files
+htdocs/
+xampp/
+.env
+config.php
+
+# VS Code
+.vscode/
+
+# JetBrains (PhpStorm, WebStorm)
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+
+vendor/
+composer.lock
+
+node_modules/
+package-lock.json
+
+
+# Log files
+*.log
+logs/
+
+# Cache files
+cache/
+tmp/
