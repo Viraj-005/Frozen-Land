@@ -58,10 +58,10 @@ $dbname = "flize_db";
 
 ## 📸 Screenshots
 
-### 🖥️ Frontend View
+### 🖥️ Frontend View (User Side)
 ![Frontend Screenshot](images/frontendss.png)
 
-### 🔧 Backend View
+### 🔧 Backend View (Admin Side)
 ![Backend Screenshot](images/backendss.png)                    
   
 ---
